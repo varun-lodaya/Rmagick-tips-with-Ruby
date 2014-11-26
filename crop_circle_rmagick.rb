@@ -1,6 +1,5 @@
 def crop_large_oval
-      color = model.color_code
-      manipulate! do |source|
+    manipulate! do |source|
 
         source = source.resize_to_fill(500,500)
         canvas = Magick::Image.new 500, 500
@@ -20,6 +19,5 @@ def crop_large_oval
         gl.rectangle(0,340,500,500)
         gl.draw(source)
         source.composite!(mask, Magick::CenterGravity, Magick::CopyOpacityCompositeOp)
-
-      end  
+    end  
 end
